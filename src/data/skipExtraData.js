@@ -3,12 +3,12 @@ export const skipExtraData = [
   {
     size: 4,
     img: "/images/4-Yard-skip.jpg",
-    description: ["Normally known as 'Midi Skips'", "It's a great size for small domestic jobs", "They hold around 30-40 bin bags"]
+    description: ["Normally known as 'Midi Skips'", "It's a great size for small domestic jobs", "It holds around 30-40 bin bags"]
   },
   {
     size: 6,
     img: "./images/6-Yard-skip.jpg",
-    description: ["Referred to 'Builders Skips'", "It holds around 50-60 bin bags", "They are great for harcore waste"],
+    description: ["Referred to 'Builders Skips'", "It holds around 50-60 bin bags", "Great for harcore waste"],
   },
   {
     size: 8,
