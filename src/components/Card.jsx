@@ -11,14 +11,14 @@ export const Card = ({img, description}) => {
 
             <header className="mb-4">
               <h3 className="text-lg font-medium text-gray-800">4 Yard Skip</h3>
-              <h4 className="text-lg font-bold text-gray-900 mt-1">$80,00</h4>
+              <h4 className="text-2xl font-bold text-blue-700 mt-1">$80,00</h4>
             </header>
 
             <ul className="space-y-3 mb-6">
               {
                 description.map( (item, index) => (
                   <li key={index} className="flex gap-2 items-center">
-                    <CheckCircle className="text-blue-500 mr-3 flex-shrink-0" size={24} />
+                    <CheckCircle className="text-green-800 mr-3 flex-shrink-0" size={24} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))
@@ -26,7 +26,7 @@ export const Card = ({img, description}) => {
             </ul>
 
             <footer className="mt-auto">
-              <button className="w-full py-3 font-bold border-2 text-blue-500 border-blue-500 hover:bg-blue-500 hover:text-white cursor-pointer rounded-md transition-colors duration-200">SELECT</button>
+              <button className="w-full py-3 font-bold border-2 text-green-800 border-green-800 hover:bg-green-800 hover:text-white cursor-pointer rounded-md transition-colors duration-200">SELECT</button>
             </footer>
         </div>
       </div>
