@@ -7,6 +7,11 @@ import { useEffect, useState } from "react"
 
 export default function App() {
   const [skipData, setSkipData] = useState([])
+  const [selectSkip, setSelectSkip] = useState({
+    size: 0,
+    hire_period_days: 0,
+    price_before_vat: 0
+  })
   
   useEffect( () => {
     axios.get('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft')
@@ -37,14 +42,14 @@ export default function App() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 mt-8 pb-12">
           {
             skipData.map( skip => (
-              <Card key={skip.id} skip={skip}/>
+              <Card key={skip.id} skip={skip} setSelectSkip={setSelectSkip}/>
 
             ))
           }
         </div>
       </div>
 
-      <Footer />
+      <Footer selectSkip={selectSkip}/>
     </div>
   )
 }

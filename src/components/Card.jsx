@@ -1,8 +1,7 @@
 import { CheckCircle } from "lucide-react"
 
-export const Card = ({skip}) => {
+export const Card = ({skip, setSelectSkip }) => {
 
-console.log(skip.description)
 
   return (
       <div className="max-w-[380px]  mt-6 bg-white border border-gray-300 rounded-md flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
@@ -36,7 +35,7 @@ console.log(skip.description)
             </ul>
 
             <footer className="mt-auto">
-              <button className="w-full py-3 font-bold border-2 text-green-800 border-green-800 hover:bg-green-800 hover:text-white cursor-pointer rounded-md transition-colors duration-200">SELECT</button>
+              <button onClick={ () => setSelectSkip(skip)} className="w-full py-3 font-bold border-2 text-green-800 border-green-800 hover:bg-green-800 hover:text-white cursor-pointer rounded-md transition-colors duration-200">SELECT</button>
             </footer>
         </div>
       </div>
