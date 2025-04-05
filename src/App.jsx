@@ -7,11 +7,7 @@ import { useEffect, useState } from "react"
 
 export default function App() {
   const [skipData, setSkipData] = useState([])
-  const [selectSkip, setSelectSkip] = useState({
-    size: 0,
-    hire_period_days: 0,
-    price_before_vat: 0
-  })
+  const [selectSkip, setSelectSkip] = useState(null)
   
   useEffect( () => {
     axios.get('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft')
