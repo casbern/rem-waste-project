@@ -15,11 +15,11 @@ export const skipExtraData = {
   },
   10: {
     img: "./images/10-Yard-skip.jpg",
-    description: ["It is great for big cleanouts and bulky wast", "It holds around 80-100 bin bags of waste"]
+    description: ["It is great for big cleanouts and bulky waste", "It holds around 80-100 bin bags of waste"]
   },
   12: {
     img: "./images/12-Yard-skip.jpg",
-    description: ["Referred to as 'Maxi Skips'", "Great for large business or house clear outs", "It holds around 100-120 bin bags", "Not suitable for heavy hardcore", "It has width restriction"]
+    description: ["Great for large business or house clear outs", "It holds around 100-120 bin bags", "Not suitable for heavy hardcore", "It has width restriction"]
   },
   14: {
     img: "./images/20-Yard-skip.png",

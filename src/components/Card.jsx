@@ -5,7 +5,7 @@ export const Card = ({skip}) => {
 console.log(skip.description)
 
   return (
-      <div className="max-w-[380px]  mt-6  bg-white border border-gray-300 rounded-md flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
+      <div className="max-w-[380px]  mt-6 bg-white border border-gray-300 rounded-md flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
         <div className="p-6 flex-grow flex flex-col">
             <div className="flex justify-center mb-4">
               <img className="h-40 object-contain" src={skip.img} alt="image of the skip's size" />
@@ -22,7 +22,7 @@ console.log(skip.description)
             <ul className="space-y-3 mb-6">
               <li className="flex gap-2 items-center">
                 <CheckCircle className="text-green-800 mr-3 flex-shrink-0" size={24} />
-                <span>{skip.hire_period_days} days hire period</span>
+                <span className="text-gray-700">{skip.hire_period_days} days hire period</span>
               </li>
               {
                 skip.description.map( (item, index) => (
