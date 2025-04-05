@@ -1,26 +1,36 @@
 import { CheckCircle } from "lucide-react"
 
-export const Card = ({img, description}) => {
+export const Card = ({skip}) => {
+
+console.log(skip.description)
+
   return (
-  
       <div className="max-w-[380px]  mt-6  bg-white border border-gray-300 rounded-md flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg">
         <div className="p-6 flex-grow flex flex-col">
             <div className="flex justify-center mb-4">
-              <img className="h-40 object-contain" src={img} alt="image of the skip's size" />
+              <img className="h-40 object-contain" src={skip.img} alt="image of the skip's size" />
             </div>
 
             <header className="mb-4">
-              <h3 className="text-lg font-medium text-gray-800">4 Yard Skip</h3>
-              <h4 className="text-2xl font-bold text-blue-700 mt-1">$80,00</h4>
+              <h3 className="text-lg font-medium text-gray-800">{skip.size} Yard Skip</h3>
+              <h4 className="text-2xl font-bold text-blue-700 mt-1">{(skip.price_before_vat|| 0).toLocaleString('en-GB', {
+                style: "currency",
+                currency: "GBP"
+              })} <span className="text-sm font-bold">per week</span></h4>
             </header>
 
             <ul className="space-y-3 mb-6">
+              <li className="flex gap-2 items-center">
+                <CheckCircle className="text-green-800 mr-3 flex-shrink-0" size={24} />
+                <span>{skip.hire_period_days} days hire period</span>
+              </li>
               {
-                description.map( (item, index) => (
-                  <li key={index} className="flex gap-2 items-center">
-                    <CheckCircle className="text-green-800 mr-3 flex-shrink-0" size={24} />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
+                skip.description.map( (item, index) => (
+                    <li key={index} className="flex gap-2 items-center">
+                      <CheckCircle className="text-green-800 mr-3 flex-shrink-0" size={24} />
+                      <span className="text-gray-700">{item}</span>
+                    </li>
+                  
                 ))
               }
             </ul>

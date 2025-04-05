@@ -1,8 +1,29 @@
 import { Card } from "./components/Card"
 import { skipExtraData } from "./data/skipExtraData"
+import  axios  from "axios"
+import { useEffect, useState } from "react"
 
 
 export default function App() {
+  const [skipData, setSkipData] = useState([])
+  
+  useEffect( () => {
+    axios.get('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft')
+    .then(response => {
+      const responseData = response.data
+
+      const newSkipData = responseData.map( item => {
+        return { ...item, ...skipExtraData[item.size]}
+        
+      })
+
+      setSkipData(newSkipData)
+    })
+    .catch( error => {
+      console.log(error.message)
+    })
+  }, [])
+  
   
   return (
     <div className="min-h-screen bg-neutral-50">
@@ -14,8 +35,8 @@ export default function App() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 mt-8 pb-12">
           {
-            skipExtraData.map( skip => (
-              <Card key={skip.size} img={skip.img} description={skip.description}/>
+            skipData.map( skip => (
+              <Card key={skip.id} skip={skip}/>
 
             ))
           }
