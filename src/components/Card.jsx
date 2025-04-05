@@ -12,7 +12,7 @@ console.log(skip.description)
             </div>
 
             <header className="mb-4">
-              <h3 className="text-lg font-medium text-gray-800">{skip.size} Yard Skip</h3>
+              <h3 className="text-lg font-bold text-gray-800">{skip.size} Yard Skip</h3>
               <h4 className="text-2xl font-bold text-blue-700 mt-1">{(skip.price_before_vat|| 0).toLocaleString('en-GB', {
                 style: "currency",
                 currency: "GBP"
