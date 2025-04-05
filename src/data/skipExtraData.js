@@ -31,11 +31,13 @@ export const skipExtraData = {
   },
   20: {
     img: "./images/20-Yard-skip.png",
-    description: ["Light construction and demolition", "It holds around 160-200 bin bags of waste"]
+    description: ["Light construction and demolition", "It holds around 160-200 bin bags of waste"],
+    price_before_vat: 655
   },
   40: {
     img: "./images/40-Yard-skip.png",
-    description: ["Mostly used for large light waste types", "It holds around 350-400 bin bags of waste"]
+    description: ["Mostly used for large light waste types", "It holds around 350-400 bin bags of waste"],
+    price_before_vat: 897
   }
 }
 
