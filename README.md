@@ -5,17 +5,16 @@ This project is a redesign of the "skip selection" page for [WeWantWaste.co.uk](
 The goal was to improve the user experience and visual design while maintaining all functionality, ensuring responsiveness across desktop and mobile devices.
 
 ## Approach
-The orginal page featured a dark-themed design with a meanless card container imagery to ilustrate the sizes of the skips.
 My redesign took a cleaner, more user-friendly approach with:
 
 * A lighter color scheme for better readability
 * Simple, intuitive images to represent skip sizes
 * Clear visual hierarchy of information
 * Improved spacing and layout
-* Better feature descriptions for each skip option
+* Descriptions for each skip option
 
 ### Responsive Design Approach
-The redesign was built with a mobile-first approach:
+The redesign was built with a mobile-first approach using:
 
 * Flexbox layout that adjusts based on screen size
 * Appropriate spacing that scales with viewport width
@@ -49,4 +48,20 @@ The response data was used to dynamically generate the skip options, including:
 * Pricing information
 * Hire period details
 
-## 
+## Future Improvements
+Given more time, I would consider:
+
+* Adding skip dimension details for better customer decision-making
+
+
+## Running the Project Locally
+1. Clone the repository
+2. Install dependencies with ```npm install```
+3. Start the development server with ```npm start```
+4. View the project at ```localhost:3000````
+
+## Demo
+A live demo of the redesign page is available at: 
+
+* [rwproject.netlify.app](https://rwproject.netlify.app/)
+* 
