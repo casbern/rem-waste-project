@@ -1,24 +1,35 @@
 import { CheckCircle } from "lucide-react"
 import { Label } from "./Label"
+import { heavyWasteSelection } from "../data/heavyWasteSelection"
 
 export const Card = ({skip, selected, setSelectSkip }) => {
 
+  const isDisabled = !skip.allows_heavy_waste && heavyWasteSelection.length > 0;
+
+
   const handleSelect = () => {
-    setSelectSkip(skip)
+    if(!isDisabled) {
+      setSelectSkip(skip)
+    }
   }
 
-  const containerClasses = `max-w-[380px] mt-6 bg-white rounded-md flex flex-col transform transition-transform duration-300 hover:scale-105 hover:shadow-lg ${
+  const containerClasses = `max-w-[380px] mt-6 rounded-md flex flex-col transform transition-transform ${
+    isDisabled 
+      ? "bg-gray-100 opacity-60 cursor-not-allowed" 
+      : "bg-white hover:scale-105 hover:shadow-lg"
+  } ${
     selected 
       ? "border-3 border-green-800" 
       : "border border-gray-300"
   }`
 
-  const buttonClasses = `w-full py-3 font-bold border-2 border-green-800 rounded-md transition-colors duration-200 cursor-pointer ${
-    selected 
-      ? "text-white bg-green-800 hover:bg-green-900" 
-      : "text-green-800 hover:bg-green-800 hover:text-white"
+  const buttonClasses = `w-full py-3 font-bold border-2 rounded-md transition-colors duration-200 ${
+    isDisabled
+      ? "bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed"
+      : selected
+        ? "text-white bg-green-800 hover:bg-green-900 border-green-800 cursor-pointer"
+        : "text-green-800 border-green-800 hover:bg-green-800 hover:text-white cursor-pointer"
   }`
-
   const buttonText = selected ? "SELECTED" : "SELECT"
 
 
@@ -34,7 +45,7 @@ export const Card = ({skip, selected, setSelectSkip }) => {
             )
           }
           { 
-            !skip.allows_heavy_waste && (
+            !skip.allows_heavy_waste && heavyWasteSelection.length > 0 && (
               <Label type="danger" msg={"Not Suitable for Heavy Waste"}/>
             )
           }
@@ -70,6 +81,7 @@ export const Card = ({skip, selected, setSelectSkip }) => {
         <footer className="mt-auto">
           <button 
             onClick={handleSelect} 
+            disabled={isDisabled}
             className={buttonClasses}
           >
             {buttonText}
