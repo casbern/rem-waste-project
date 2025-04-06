@@ -38,7 +38,7 @@ export default function App() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 mt-8 pb-12">
           {
             skipData.map( skip => (
-              <Card key={skip.id} skip={skip} setSelectSkip={setSelectSkip}/>
+              <Card key={skip.id} skip={skip} selected={skip.id === selectSkip?.id} setSelectSkip={setSelectSkip}/>
 
             ))
           }
