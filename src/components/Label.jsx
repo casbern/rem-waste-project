@@ -5,8 +5,10 @@ import { CircleAlert } from "lucide-react"
 export const Label = ({msg, type}) => {
 
 const typeStyle = {
-  warning: `text-white text-bold bg-orange-400 py-1.5 px-1 rounded-lg `,
-  danger: `text-white text-bold bg-red-500 p-1.5 rounded-lg`
+  // warning: `text-sm text-white text-bold bg-orange-400 py-1.5 px-1 rounded-lg `,
+  // danger: `text-sm text-white text-bold bg-red-500 p-1.5 rounded-lg`
+  warning: `text-md text-amber-500 text-bold `,
+  danger: `text-md text-red-600 text-bold `
 }
 
   return (

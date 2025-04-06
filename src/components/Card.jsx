@@ -27,7 +27,7 @@ export const Card = ({skip, selected, setSelectSkip }) => {
       <div className={containerClasses}>
       <div className="p-6 flex-grow flex flex-col">
         <div className="flex flex-col justify-center mb-4 relative ">
-        <div className="flex flex-col -mb-1 self-start">
+        <div className="flex flex-col -mb-2 self-start">
           { 
             !skip.allowed_on_road && (
               <Label type="warning" msg={"Private Property Only"}/>
