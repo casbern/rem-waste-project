@@ -1,4 +1,5 @@
 import { Card } from "./components/Card"
+import { CardSkeleton } from "./components/CardSkeleton"
 import { Footer } from "./components/Footer"
 import { skipExtraData } from "./data/skipExtraData"
 import  axios  from "axios"
@@ -8,21 +9,24 @@ import { useEffect, useState } from "react"
 export default function App() {
   const [skipData, setSkipData] = useState([])
   const [selectSkip, setSelectSkip] = useState(null)
+  const [loading, setLoading] = useState(true)
   
   useEffect( () => {
     axios.get('https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft')
     .then(response => {
       const responseData = response.data
-
+      
       const newSkipData = responseData.map( item => {
         return { ...item, ...skipExtraData[item.size]}
         
       })
-
+      
       setSkipData(newSkipData)
+      setLoading(false)
     })
     .catch( error => {
       console.log(error.message)
+      setLoading(false)
     })
   }, [])
   
@@ -37,10 +41,15 @@ export default function App() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 mt-8 pb-12">
           {
+            loading ? (
+              [...Array(6)].map((_, index) => (
+                <CardSkeleton key={index} />
+              ))
+             ) : (
             skipData.map( skip => (
               <Card key={skip.id} skip={skip} selected={skip.id === selectSkip?.id} setSelectSkip={setSelectSkip}/>
-
             ))
+            )
           }
         </div>
       </div>
