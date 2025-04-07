@@ -34,8 +34,7 @@ export const Card = ({skip, selected, setSelectSkip }) => {
 
 
   return (
-    
-      <div className={containerClasses}>
+    <div className={containerClasses}>
       <div className="p-6 flex-grow flex flex-col">
         <div className="flex flex-col justify-center mb-4 relative ">
         <div className="flex flex-col -mb-2 self-start">
