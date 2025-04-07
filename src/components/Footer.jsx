@@ -3,7 +3,7 @@ export const Footer = ({selectSkip}) => {
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 bg-white shadow-lg px-6 py-4">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center ">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center ">
         <div className="w-full flex justify-start items-center space-x-4">
           {
             selectSkip && (
