@@ -6,10 +6,10 @@ This project is a redesign of the "skip selection" page for [WeWantWaste.co.uk](
 The goal was to improve the user experience and visual design while maintaining all functionality and ensuring responsiveness across both desktop and mobile devices.
 
 # Design and UI/UX Approach
-My redesign focused on delivering a UI that is clean, easy to use, and responsive.  
+My redesign focused on delivering a UI/UX that is clean, easy to use, and responsive.  
 To achieve that:
 - I chose a light background color theme to enhance readability and integrate images more seamlessly into the design.
-- In line with UI principles, I used a single accent color for interactive elements like buttons, guiding the user through the flow.
+- In line with UI/UX principles, I used a single accent color for interactive elements like buttons, guiding the user through the flow.
 - I implemented responsive CSS techniques to adapt to various screen resolutions and tested the UI on several different devices.
 - I prioritized organizing key information for each Skip, allowing users to quickly see what matters most while still being able to access additional details when needed.
 - I worked with data from the API and mimicked waste-related data coming from the user in order to filter out only the usable Skips.
